@@ -1,6 +1,6 @@
 
 
-![Tutorial Logo.png](D:\Nextcloud\persoonlijk\PWA%20Workshop\docs\images\Tutorial%20Logo.png)
+![Tutorial Logo.png](https://github.com/StevenSlaa/PWA-Basics/blob/main/docs/images/Tutorial%20Logo.png?raw=true)
 
 # Progressive Web Apps (PWA's)
 
@@ -15,11 +15,11 @@ Je kan Lighthouse direct uit proberen door naar een website te gaan en de develo
 
 > Je kan de developer tools openen door op de F12 toets te drukken.
 
-> Het kan zijn dat lighthouse niet direct zichtbaar is. Je kan selecteren door in de tabs van het developer menu te klikken op de plus(+) knop te klikken.
+> Het kan zijn dat lighthouse niet direct zichtbaar is. Je kan hem vinden door in de tabs van het developer menu op de plus(+) knop te klikken.
 
 Wanneer je in lighthouse op `Analyze page load` klikt, zal Lighthouse de site gaan checken. Wanneer dit klaar is laat Lighthouse jouw een rapport zien van een aantal categorieën, waaronder ook PWA.
 
-![](D:\Nextcloud\persoonlijk\PWA%20Workshop\docs\images\Lighouse%20Categories.png)
+![](https://github.com/StevenSlaa/PWA-Basics/blob/main/docs/images/Lighouse%20Categories.png?raw=true)
 
 Wanneer de website niet voldoet aan de eisen van PWA, zal wanneer je naar onderscrolt staan waarom dit zo is en aangeven wat je moet doen om dit wel voor elkaar te krijgen.
 
@@ -39,7 +39,7 @@ Eén van de belangrijkste feature van een PWA is het offline laten werken van de
 
 Zodra dit gelukt is, kan je in chrome checken of hij is geregistreerd. Dit kan je doen door te gaan naar: Developer menu en dan naar de tab `Application -> Service Workers` . Wanneer de Service Worker is geregistreerd is het volgende te zien:
 
-![](D:\Nextcloud\persoonlijk\PWA%20Workshop\docs\images\Application%20Menu.png)
+![](https://github.com/StevenSlaa/PWA-Basics/blob/main/docs/images/Application%20Menu.png?raw=true)
 
 Wanneer dit is gelukt kan je je code in de `service-worker.js` file schrijven. Je kan ook gebruik maken van een library genaamd [Workbox ](https://developer.chrome.com/docs/workbox)om al het complexe hieraan over te laten. Een enorm basic service-worker script ziet er als volgt uit:
 
@@ -106,8 +106,21 @@ Wanneer dit is gelukt zal er in Lighthouse na een nieuwe check een verificatie v
 
 Clone deze repository and open hem in [Visual Studio Code](https://code.visualstudio.com/). Visual Studio Code is een code editor. Visual Studio Code ondersteunt extensies waarvan we gebruik gaan maken. In de Extenties tabblad aan de linker kant van de editor. Zoek hier naar `Live Server`. Installeer de extentie door te klikken op `install`.
 
-![](D:\Nextcloud\persoonlijk\PWA%20Workshop\docs\images\Live%20Server%20Extension.png)
+![](https://github.com/StevenSlaa/PWA-Basics/blob/main/docs/images/Live%20Server%20Extension.png?raw=true)
 
-Zodra deze is geïnstalleerd verschijnt rechts onderaan in de blauwe balk een knop `Go Live`. Zodra je hierop klikt wordt er een webserver gehost waar je naar toe kan gaan door in de browser te navigeren naar `http://localhost:5500`. Kijk eens rond in de `index.html`,`service-worker.js` en `manifest.json`. Overal staat commentaar bij en probeer hier maar eens mee te experimenteren.
+Zodra deze is geïnstalleerd verschijnt rechts onderaan in de blauwe balk een knop `Go Live`. Zodra je hierop klikt wordt er een webserver gehost waar je naar toe kan gaan door in de browser te navigeren naar `http://localhost:5500`. Kijk eens rond in de `index.html`, `service-worker.js` en `manifest.json`. Overal staat commentaar bij en probeer hier maar eens mee te experimenteren.
 
+## Handige tips
 
+### Een PWA testen op een mobiel toestel
+
+Normaal gesproken werken PWA's alleen op websites die beveiligd zijn met https vanwege vanzelf sprekende beveiligingsredenen. Echter is `localhost` een uitzondering speciaal voor ontwikkelaars. Je kan alleen niet het op een mobiele telefoon testen omdat daar je website niet op wordt gehost. Gelukkig hebben Chromium gebasseerde browser een port forwarding tool ingebouwd zitten. Deze tool kan je breiken door in de url-balk het volgende in te voeren: `chrome://inspect` of voor Microsoft Edge: `chrome://inspect`. Wanneer je hier op `Port forwarding...` klikt kan je port `5500` forwarden naar `localhost:5500`.
+![Chrome Port-forwarding.png](https://github.com/StevenSlaa/PWA-Basics/blob/main/docs/images/Chrome%20Port-forwarding.png?raw=true)
+
+Nu kan je via een Android toestel (waarbij [USB-Debugging staat ingeschakeld](https://www.embarcadero.com/starthere/xe5/mobdevsetup/android/en/enabling_usb_debugging_on_an_android_device.html)) en waarop een Chromium gebaseerde browser staat navigeren naar [localhost:5500](http://localhost:5500). Nu wordt je als je het goed hebt gedaan door gestuurd naar je PWA.
+
+<img title="" src="https://github.com/StevenSlaa/PWA-Basics/blob/main/docs/images/screenshot.jpg?raw=true" alt="Screenshot_20221101-203745_Chrome.jpg" width="194">
+
+### Alle PWA features
+
+Check deze website voor alle features wat door PWA's worden ondersteunt: [What PWA Can Do Today](https://whatpwacando.today/)
