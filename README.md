@@ -112,7 +112,7 @@ Zodra deze is geïnstalleerd verschijnt rechts onderaan in de blauwe balk een kn
 
 > In dit voorbeeld is de service-worker `sw.js` gegenereerd met behulp van Workbox met de bijbehorende CLI. Je kan deze CLI tool installeren door gebruik te maken van [nodeJS](https://nodejs.org/en/) en het commando `npm install workbox-cli -g`. Dit installeert de workbox CLI. Vervolgens kan je je eigen service worker samenstellen met het commando `workbox wizard` en vervolgens `workbox generateSW workbox-config.js`.
 
-![]('https://github.com/StevenSlaa/PWA-Basics/blob/main/docs/images/screenshot-desktop.png?raw=true')
+![](https://github.com/StevenSlaa/PWA-Basics/blob/main/docs/images/screenshot-desktop.png?raw=true)
 
 ## Handige tips
 
