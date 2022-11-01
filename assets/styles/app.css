@@ -1,5 +1,54 @@
+/* 
+Dit bestand is puur voor het stylen van de elementen en is dus optioneel 
+Wat wel goed is om te weten, is dat dit bestand ook wordt gecached en dus ook werkt wanneer je offline bent ;)
+*/
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap');
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+#logo{
+    width: 90%;
+    max-width: 400px;
+}
+
+#title{
+    margin-bottom: 8px;
+}
+
+#wave {
+    margin-top: 48px;
+    margin-bottom: 24px;
+    animation-name: wave-animation;
+    animation-duration: 2.5s;
+    animation-iteration-count: infinite;
+    transform-origin: 70% 70%;
+    display: inline-block;
+    font-size: 3rem;
+    
+}
+
+@keyframes wave-animation {
+    0% { transform: rotate( 0.0deg) }
+   10% { transform: rotate(14.0deg) }
+   20% { transform: rotate(-8.0deg) }
+   30% { transform: rotate(14.0deg) }
+   40% { transform: rotate(-4.0deg) }
+   50% { transform: rotate(10.0deg) }
+   60% { transform: rotate( 0.0deg) }
+  100% { transform: rotate( 0.0deg) }
 }

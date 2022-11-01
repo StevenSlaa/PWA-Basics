@@ -32,7 +32,7 @@ Eén van de belangrijkste feature van een PWA is het offline laten werken van de
 <script>
     // Check of de browser service-workers ondersteunt en registereer hem dan
     if ('serviceWorker' in navigator) {
-        navigator.serviceWorker.register('/assets/scripts/service-worker.js')
+        navigator.serviceWorker.register('/assets/scripts/sw.js')
     }
 </script>
 ```
@@ -44,12 +44,12 @@ Zodra dit gelukt is, kan je in chrome checken of hij is geregistreerd. Dit kan j
 Wanneer dit is gelukt kan je je code in de `service-worker.js` file schrijven. Je kan ook gebruik maken van een tool genaamd [Workbox](https://developer.chrome.com/docs/workbox) om al het complexe hieraan over te laten. Een enorm basic service-worker script ziet er als volgt uit:
 
 ```javascript
-// root/assets/scripts/service-worker.js
+// root/assets/scripts/service-worker (basic).js
 
 //Importeer Workbox
 importScripts('https://storage.googleapis.com/workbox-cdn/releases/6.4.1/workbox-sw.js');
 
-//Registreer een route van je pagina
+//Registreer een route van je assets
 workbox.routing.registerRoute(
     ({request}) => request.destination === 'image',
     new workbox.strategies.NetworkFirst() //Selecteer een strategy voor het cachen van bestanden
@@ -108,7 +108,7 @@ Clone deze repository and open hem in [Visual Studio Code](https://code.visualst
 
 ![](https://github.com/StevenSlaa/PWA-Basics/blob/main/docs/images/Live%20Server%20Extension.png?raw=true)
 
-Zodra deze is geïnstalleerd verschijnt rechts onderaan in de blauwe balk een knop `Go Live`. Zodra je hierop klikt wordt er een webserver gehost waar je naar toe kan gaan door in de browser te navigeren naar `http://localhost:5500`. Kijk eens rond in de `index.html`, `service-worker.js` en `manifest.json`. Overal staat commentaar bij en probeer hier maar eens mee te experimenteren. 
+Zodra deze is geïnstalleerd verschijnt rechts onderaan in de blauwe balk een knop `Go Live`. Zodra je hierop klikt wordt er een webserver gehost waar je naar toe kan gaan door in de browser te navigeren naar `http://localhost:5500`. Kijk eens rond in de `index.html`, `sw.js` en `manifest.json`. Overal staat commentaar bij en probeer hier maar eens mee te experimenteren. Doordat de server de pagina gecached heeft, kan je nu zelfs de server afsluiten en de pagina opnieuw laden. De service worker detecteerd dat deze pagina eerder is bezocht en heeft hem opgeslagen. Nu stuurt de service worker deze pagina aan jouw, dus hij kan nu zelfs je pagina laden zonder dat de server uberhaubt aan staat!😃
 
 > In dit voorbeeld is de service-worker `sw.js` gegenereerd met behulp van Workbox met de bijbehorende CLI. Je kan deze CLI tool installeren door gebruik te maken van [nodeJS](https://nodejs.org/en/) en het commando `npm install workbox-cli -g`. Dit installeert de workbox CLI. Vervolgens kan je je eigen service worker samenstellen met het commando `workbox wizard` en vervolgens `workbox generateSW workbox-config.js`.
 
