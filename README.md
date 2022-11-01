@@ -41,7 +41,7 @@ Zodra dit gelukt is, kan je in chrome checken of hij is geregistreerd. Dit kan j
 
 ![](https://github.com/StevenSlaa/PWA-Basics/blob/main/docs/images/Application%20Menu.png?raw=true)
 
-Wanneer dit is gelukt kan je je code in de `service-worker.js` file schrijven. Je kan ook gebruik maken van een library genaamd [Workbox ](https://developer.chrome.com/docs/workbox)om al het complexe hieraan over te laten. Een enorm basic service-worker script ziet er als volgt uit:
+Wanneer dit is gelukt kan je je code in de `service-worker.js` file schrijven. Je kan ook gebruik maken van een tool genaamd [Workbox](https://developer.chrome.com/docs/workbox) om al het complexe hieraan over te laten. Een enorm basic service-worker script ziet er als volgt uit:
 
 ```javascript
 // root/assets/scripts/service-worker.js
@@ -56,7 +56,7 @@ workbox.routing.registerRoute(
 )
 ```
 
-Het belangrijkste wat je in de service worker moet doen, is het cachen van je webpagina's zodat ze vanuit de cache kunnen worden geladen wanneer je offline bent. Ook de gecachte gegevens kun je zien vanuit de application tab in je Chromium gebaseerde browser door in de application tab op `Cache Storage` te klikken. 
+Het belangrijkste wat je in de service worker moet doen, is het cachen van je webpagina's zodat ze vanuit de cache kunnen worden geladen wanneer je offline bent. Het voorbeeld hierboven werkt niet volgens dit principe. Hoe dit precies werkt gaan we niet in. Als je maar snapt dat een service worker diverse taken heeft waaronder het cachen van bestanden en requests, om de website offline te laten werken. Ook de gecachte gegevens kun je zien vanuit de application tab in je Chromium gebaseerde browser door in de application tab op `Cache Storage` te klikken. 
 
 Als laatste is het belangrijk dat je website een `manifest.json` heeft hierin staan onderandere je icoontjes en andere meta-data van je applicatie. Zo'n manifest kan er als volgt uit zien:
 
@@ -108,7 +108,9 @@ Clone deze repository and open hem in [Visual Studio Code](https://code.visualst
 
 ![](https://github.com/StevenSlaa/PWA-Basics/blob/main/docs/images/Live%20Server%20Extension.png?raw=true)
 
-Zodra deze is geïnstalleerd verschijnt rechts onderaan in de blauwe balk een knop `Go Live`. Zodra je hierop klikt wordt er een webserver gehost waar je naar toe kan gaan door in de browser te navigeren naar `http://localhost:5500`. Kijk eens rond in de `index.html`, `service-worker.js` en `manifest.json`. Overal staat commentaar bij en probeer hier maar eens mee te experimenteren.
+Zodra deze is geïnstalleerd verschijnt rechts onderaan in de blauwe balk een knop `Go Live`. Zodra je hierop klikt wordt er een webserver gehost waar je naar toe kan gaan door in de browser te navigeren naar `http://localhost:5500`. Kijk eens rond in de `index.html`, `service-worker.js` en `manifest.json`. Overal staat commentaar bij en probeer hier maar eens mee te experimenteren. 
+
+> In dit voorbeeld is de service-worker `sw.js` gegenereerd met behulp van Workbox met de bijbehorende CLI. Je kan deze CLI tool installeren door gebruik te maken van [nodeJS](https://nodejs.org/en/) en het commando `npm install workbox-cli -g`. Dit installeert de workbox CLI. Vervolgens kan je je eigen service worker samenstellen met het commando `workbox wizard` en vervolgens `workbox generateSW workbox-config.js`.
 
 ## Handige tips
 
