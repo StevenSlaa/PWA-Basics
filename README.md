@@ -100,6 +100,12 @@ Als laatste is het belangrijk dat je website een `manifest.json` heeft hierin st
 }
 ```
 
+Belangrijk is dat je deze toevoegd in de `index.html`. Dit doe je door de volgende regel toe te voegen in de head sectie van het document:
+
+``` html
+<link rel="manifest" href="manifest.json">
+```
+
 Wanneer dit is gelukt zal er in Lighthouse na een nieuwe check een verificatie verschijnen dat je website voldoet aan de PWA certificering en kan je applicatie worden geïnstalleerd op alle ondersteunde apparaten en zelfs worden toegevoegd aan Google Playstore of de Microsoft Store.
 
 ## Het bouwen van je eigen PWA
